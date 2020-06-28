@@ -9,3 +9,12 @@
 	gtag('config', '{{ site.google_analytics_id }}');
 </script>
 {% endif %}
+
+{% if site.naver_analytics_id %}
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+	if(!wcs_add) var wcs_add = {};
+	wcs_add["wa"] = "{{ site.naver_analytics_id }}";
+	if(window.wcs) { wcs_do(); }
+</script>
+{% endif%}
