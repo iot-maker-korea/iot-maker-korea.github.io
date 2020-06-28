@@ -17,7 +17,7 @@
                 {% capture next_month %}{{ post.previous.date | date: "%B %Y" }}{% endcapture %}
 
                 {% if this_month != next_month %}
-                <li><a href="{{ site.url }}/Archives#{{ this_month | date: '%Y' }}">{{ this_month }}</a></li>
+                <li><a href="{{ site.url }}/archives#{{ this_month | date: '%Y' }}">{{ this_month }}</a></li>
                 {% endif %}
             {% endfor %}
         </ol>
