@@ -1,0 +1,23 @@
+{% if paginator.total_pages > 1 %}
+
+	{% if paginator.page == 1 %}
+		<a class="btn btn-outline-primary" href="{{ site.url }}/page{{ paginator.next_page }}/">OLDER</a>
+	{% endif %}
+
+	{% if paginator.page == 2 %}
+		<a class="btn btn-outline-secondary disabled" tabindex="-1" aria-disabled="true" href="/">NEWER</a>
+		{% if paginator.page < paginator.total_pages %}
+			| <a class="btn btn-outline-primary" href="{{ site.url }}/page{{ paginator.next_page }}/">OLDER</a>
+		{% endif %}
+	{% endif %}
+
+	{% if paginator.page > 2 %}
+		<a class="btn btn-outline-secondary" href="{{ site.url }}/page{{ paginator.previous_page }}/">NEWER</a>
+
+		{% if paginator.page < paginator.total_pages %}
+			| <a class="btn btn-outline-primary" href="{{ site.url }}/page{{ paginator.next_page }}/">OLDER</a>
+		{% endif %}
+
+	{% endif %}
+
+{% endif %}

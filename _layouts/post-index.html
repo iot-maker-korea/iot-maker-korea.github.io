@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		{% include head.html %}
+	</head>
+
+	<body>
+		<div class="container">
+
+			{% include top.html %}
+
+			{% include inform.html %}
+
+			<!-- post position-->
+			<main role="main" class="container">
+				<div class="row">
+					<div class="col-md-8 blog-main">
+						{% include browser-upgrade.html %}
+
+						{{ content }}
+
+						<br>
+						<nav class="blog-pagination">
+							{% include pagination.html %}
+						</nav>
+					</div><!-- /.blog-main -->
+
+					<!-- side bar position -->
+					{% include sidebar.html %}
+				</div><!-- /.row -->
+			</main><!-- /.container -->
+
+			{% include footer.html %}
+		</div>
+	</body>
+</html>

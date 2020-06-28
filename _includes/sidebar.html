@@ -1,0 +1,35 @@
+<aside class="col-md-4 blog-sidebar">
+    <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="font-italic">{{ site.title }}</h4>
+        <p class="mb-0">
+            <span><b>{{ site.inform.descript1 }}</b></span><br>
+            <sapn>{{ site.inform.descript2 }}</sapn>
+        </p>
+    </div>
+
+    <div class="p-4">
+        <h4 class="font-italic">Archives</h4>
+        <ol class="list-unstyled mb-0">
+            <!--li><a href="#">March 2014</a></li-->
+
+            {% for post in site.posts %}
+                {% capture this_month %}{{ post.date | date: "%B %Y" }}{% endcapture %}
+                {% capture next_month %}{{ post.previous.date | date: "%B %Y" }}{% endcapture %}
+
+                {% if this_month != next_month %}
+                <li><a href="{{ site.url }}/Archives#{{ this_month | date: '%Y' }}">{{ this_month }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </div>
+
+    <div class="p-4">
+        <h4 class="font-italic">SNS</h4>
+        <ol class="list-unstyled">
+            <li><a href="https://github.com/{{ site.owner.github }}">GitHub</a></li>
+            <li><a href="https://twitter.com/{{ site.owner.twitter }}">Twitter</a></li>
+            <li><a href="https://www.instagram.com/{{ site.owner.instagram }}">Instagram</a></li>
+            <li><a href="https://www.facebook.com/{{ site.owner.facebook }}">Facebook</a></li>
+        </ol>
+    </div>
+</aside><!-- /.blog-sidebar -->

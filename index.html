@@ -1,0 +1,74 @@
+---
+layout: post-index
+description: index page
+---
+
+{% for post in paginator.posts %}
+<div class="row md-2">
+	<div class="col-md-12">
+		<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+			<div class="col p-4 d-flex flex-column position-static">
+
+				<!-- cateroy color -->
+				{% assign category_color_class = "text-success" %} <!-- default color -->
+				{% assign post_category = post.category | replace: '["', '' | replace: '"]', '' %}
+				{% assign pages_list = site.pages %}
+				{% for node in pages_list %}
+					{% if node.layout == "category" %}
+						{% if node.title == post_category %}
+							{% assign category_color_class = node.color_class %}
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+				<!-- cateroy color -->
+
+				<strong class="d-inline-block mb-2 {{category_color_class}}">{{ post.category }}</strong>
+				<h3 class="mb-0" title="{{ post.title }}">{{ post.title }}</h3>
+				<!-- POST DATE -->
+				<div class="mb-1 text-muted">
+					<time datetime="{{ post.date | date_to_xmlschema }}">
+						<a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a>
+					</time>
+				</div>
+
+				{% if post.description %}
+				<p class="card-text mb-auto">{{ post.description }}</p>
+				{% endif %}
+
+				<!-- POST Link-->
+				<!--
+					<a href="{{ site.url }}{{ post.url }}">Continue reading</a>
+				-->
+				<a href="{{ site.url }}{{ post.url }}" class="stretched-link">Continue reading</a>
+
+				<!--- DIVIDING LINE -->
+				<!--
+					<hr>
+				-->
+
+				<!-- POST TAGS -->
+				<div class="inline-tags">
+					<span>
+					{% for tag in post.tags %}
+						<a href="/tags/#{{tag}}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
+					{% endfor %}
+					</span>
+				</div>
+			</div>
+			<div class="col-auto d-none d-lg-block">
+			{% if post.thumb %}
+				{% if post.thumb.url %}
+					<img class="bd-placeholder-img" src="{{ post.thumb.url }}">
+				{% elsif post.thumb.title %}
+					<svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="{{ post.thumb.title }}">
+						<title>{{ post.thumb.title }}</title>
+						<rect width="100%" height="100%" fill="#55595c" />
+						<text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ post.thumb.title }}</text>
+					</svg>
+				{% endif %}
+			{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}

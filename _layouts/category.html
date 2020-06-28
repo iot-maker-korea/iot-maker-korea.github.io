@@ -1,0 +1,40 @@
+---
+layout: post-index
+---
+
+<h3 class="blog-post-title">{{ page.title }}{% if page.subTitle %} / {{ page.subTitle }}{% endif %}</h3>
+
+<hr/>
+
+<ul class="posts-list">
+    {% assign category = page.category | default: page.title %}
+    {% for post in site.categories[category] %}
+    <li>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <small>{{ post.date | date_to_string }}</small>
+    </li>
+    {% endfor %}
+</ul>
+
+
+<!--- DIVIDING LINE -->
+<hr>
+
+<!-- POST TAGS -->
+{% if page.tags %}
+<br><hr/>
+<div class="inline-tags">
+    <span>
+    {% for tag in page.tags %}
+        <a href="/tags/#{{tag}}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
+    {% endfor %}
+    </span>
+</div>
+{% endif %}
+
+<br>
+
+<!-- POST DATE -->
+<div class="post-date">
+    {{ page.date-string }}
+</div>

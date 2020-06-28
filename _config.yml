@@ -1,0 +1,93 @@
+title: IoT Maker
+author_profile: IoT Maker
+description: 소모임 iot maker 소스공유 및 학습자료 공유 목적.
+
+copyright: iot-maker-korea
+email: iot191210@gmail.com
+
+url: "https://iot-maker-korea.github.io" # add your custom site url (format: https://example.com)
+baseUrl: ""
+
+#google_analytics_id: UA-71760888-10
+#google_adsense_id: ca-pub-8727303446601569
+
+owner:
+  twitter: iot_maker_korea
+  facebook: iot.maker.korea
+  instagram: iot.maker.korea
+  github: iot-maker-korea
+
+inform:
+  name: 소모임 IoT Maker
+  descript1: 대전, 오프라인 중심
+  descript2: 정기모임 / 매주 일요일 / 둔산동 / 11:00 ~ 13:00
+
+relativeSite:
+  blog: http://iot-maker.kro.kr
+  github: https://git.iot-maker.kro.kr
+  somoim: http://somoim.iot-maker.kro.kr
+
+fontColor:
+  blue: text-primary
+  gray: text-secondary
+  green: text-success
+  red: text-danger
+  yellow: text-warning
+  mint: text-info
+  bright: text-light
+  black: text-dark
+  muted: text-muted
+  white: text-white
+
+future:      false  # publish future dated posts --  true, false (default)
+highlighter: rouge
+markdown:    kramdown
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-feed
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+permalink: /:categories/:year-:month-:day/:title.html
+
+# Amount of post to show on home page
+paginate: 5
+
+#kramdown:
+#  input: GFM
+#  auto_ids: true
+#  footnote_nr: 1
+#  entity_output: as_char
+#  toc_levels: 1..6
+#  enable_coderay: false
+
+include:
+  - .htaccess
+
+exclude:
+  - "*.less"
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - CHANGELOG
+  - Capfile
+  - Gemfile
+  - Gruntfile.js
+  - LICENSE
+  - README
+  - Rakefile
+  - config
+  - gulpfile.js
+  - lib
+  - log
+  - node_modules
+  - package.json
+  - spec
+  - tmp
