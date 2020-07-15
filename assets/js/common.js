@@ -6,18 +6,22 @@ var anchor = location.hash;
 
 $(function(){
 	fn_img_resize();
-	fn_scrollto();
+	fn_achorAddTarget();
 });
 
 /**
- * scrollto
+ * markdown은 achor에 옵션이 없어서 추가
+ * 링크 클릭시, 외부사이트는 새창으로
+ * achor to target: _blank
  */
-function fn_scrollto(){
-	if(anchor != ''){
-		// console.log(anchor)
-		var top = document.querySelector('[name="' + anchor + '"]').offsetTop;
-		window.scrollTo({top:top, behavior:'smooth'});
-	}
+function fn_achorAddTarget(){
+	// console.log(location.origin)
+	$('a').each(function(idx, data){
+		if(!$(data).attr('href').includes('mailto') && !$(data).attr('href').includes(location.origin)){
+			// console.log($(data).attr('href'))
+			$(data).attr('target', '_blank');
+		}
+	});
 }
 
 /**
