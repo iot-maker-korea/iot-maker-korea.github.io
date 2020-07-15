@@ -1,11 +1,11 @@
 <div class="nav-scroller py-1 mb-2">
 	<nav class="nav d-flex justify-content-between">
 		<!--
-			<a class="p-2 text-muted {% if page.url == node.url %} active{% endif %}" href="{{ site.url }}/">home</a>
-			<a class="p-2 text-muted {% if page.url == node.url %} active{% endif %}" href="{{ site.url }}/archives/">ARCHIVE</a>
-			<a class="p-2 text-muted {% if page.url == node.url %} active{% endif %}" href="{{ site.url }}/about/">ABOUT</a>
-			<a class="p-2 text-muted {% if page.url == node.url %} active{% endif %}" href="{{ site.url }}/tags/">TAGS</a>
-			<a class="p-2 text-muted {% if page.url == node.url %} active{% endif %}" href="{{ "{{ site.url }}/feed.xml" | prepend: site.baseurl }}">RSS</a>
+			<a class="p-2 text-muted {% if page.url == node.url %} active{% endif %}" href="/">home</a>
+			<a class="p-2 text-muted {% if page.url == node.url %} active{% endif %}" href="/archives/">ARCHIVE</a>
+			<a class="p-2 text-muted {% if page.url == node.url %} active{% endif %}" href="/about/">ABOUT</a>
+			<a class="p-2 text-muted {% if page.url == node.url %} active{% endif %}" href="/tags/">TAGS</a>
+			<a class="p-2 text-muted {% if page.url == node.url %} active{% endif %}" href="/feed.xml" | prepend: site.baseurl }}">RSS</a>
 		-->
 
 		{% assign pages_list = site.pages %}
@@ -14,7 +14,7 @@
 			{% if node.title != null %}
 				<!-- main category -->
 				{% if node.layout == "category" %}
-		<a class="p-2 {% if page.url == node.url %}text-primary{% else %}text-muted{% endif %}" href="{{ site.url }}{{ node.url }}">{{ node.title }}</a>
+		<a class="p-2 {% if page.url == node.url %}text-primary{% else %}text-muted{% endif %}" href="{{ site.baseUrl }}{{ node.url }}">{{ node.title }}</a>
 				{% endif %}
 				<!-- main category -->
 
@@ -22,7 +22,7 @@
 				{% for node2 in pages_list %}
 				{% if node2.parents != null and node.title == node2.parents %}
 						{% if node.layout == "category" %}
-		<a class="p-2 {% if page.url == node2.url %}text-primary{% else %}text-muted{% endif %}" href="{{ site.url }}{{ node2.url }}">{{ node2.title }}</a>
+		<a class="p-2 {% if page.url == node2.url %}text-primary{% else %}text-muted{% endif %}" href="{{ site.baseUrl }}{{ node2.url }}">{{ node2.title }}</a>
 						{% endif %}
 				{% endif %}
 				{% endfor %}
