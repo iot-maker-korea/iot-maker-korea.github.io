@@ -17,7 +17,7 @@ $(function(){
 function fn_achorAddTarget(){
 	// console.log(location.origin)
 	$('a').each(function(idx, data){
-		if(!$(data).attr('href').includes('mailto') && !$(data).attr('href').includes(location.origin)){
+		if(!$(data).attr('href').includes('mailto') && !$(data).attr('href').includes(location.origin) && $(data).attr('href') != '/'){
 			// console.log($(data).attr('href'))
 			$(data).attr('target', '_blank');
 		}
