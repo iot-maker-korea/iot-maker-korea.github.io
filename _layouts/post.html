@@ -26,6 +26,11 @@
 
 							{{ page.content }}
 
+
+							<!-- utteranc comments -->
+							{% include comment.html %}
+							<!-- utteranc comments -->
+
 							<!-- POST TAGS -->
 							{% if page.tags %}
 							<br><hr/>
@@ -37,16 +42,6 @@
 								</span>
 							</div>
 							{% endif %}
-
-							<!-- utteranc comments -->
-							<script src="https://utteranc.es/client.js"
-								repo="iot-maker-korea/blog-comments"
-								issue-term="pathname"
-								theme="github-light"
-								crossorigin="anonymous"
-								async>
-							</script>
-							<!-- utteranc comments -->
 
 						</div><!-- /.blog-post -->
 						<!--
