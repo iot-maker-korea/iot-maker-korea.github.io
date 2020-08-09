@@ -22,6 +22,7 @@ inform:
   name: 소모임 IoT Maker
   descript1: 대전, 오프라인 중심
   descript2: 정기모임 / 매주 일요일 / 둔산동 / 11:00 ~ 13:00
+  tags: [raspberrypi, arduino,라즈베리파이,아두이노]
 
 relativeSite:
   blog: http://iot-maker.kro.kr
