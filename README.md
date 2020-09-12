@@ -11,6 +11,7 @@ iot-maker-korea.github.io
 > __Facebook__: https://www.facebook.com/iot.maker.korea  
 > __Instagram__: https://www.instagram.com/iot.maker.korea  
 > __Twitter__: https://twitter.com/iot_maker_korea  
+> __Youtube__: https://www.youtube.com/channel/UCRK7ghg125DHRoq35WMa2og/?sub_confirmation=1
 
 #### 정기모임 / 매주 일요일 / 둔산동 / 11:00 ~ 13:00
 
