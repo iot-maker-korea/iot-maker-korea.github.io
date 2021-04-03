@@ -29,6 +29,7 @@ relativeSite:
   github: http://git.iot-maker.kro.kr
   somoim: http://somoim.iot-maker.kro.kr
   youtube: http://youtube.iot-maker.kro.kr
+  kakao: https://open.kakao.com/o/guIEhaPb
 
 fontColor:
   blue: text-primary
